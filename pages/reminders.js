@@ -10,8 +10,12 @@ export default function Reminders() {
 
   return (
     <section>
-      <h2>Relances abonnement</h2>
-      <p className="sub">Membres avec un abonnement mensuel dont l'échéance arrive dans 3 jours ou moins</p>
+      <div className="pageHead">
+        <p className="eyebrow">Fidélisation</p>
+        <h2>RELANCES</h2>
+        <div className="bar" />
+        <p className="sub">Membres avec un abonnement mensuel dont l'échéance arrive dans 3 jours ou moins</p>
+      </div>
 
       <div className="card">
         {members.map((m) => {

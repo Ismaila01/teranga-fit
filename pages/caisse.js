@@ -22,8 +22,12 @@ export default function Caisse() {
 
   return (
     <section>
-      <h2>Billetterie & Caisse</h2>
-      <p className="sub">Tickets à l'unité et suivi de la caisse du jour</p>
+      <div className="pageHead">
+        <p className="eyebrow">Ventes du jour</p>
+        <h2>BILLETTERIE &amp; CAISSE</h2>
+        <div className="bar" />
+        <p className="sub">Tickets à l'unité et suivi de la caisse du jour</p>
+      </div>
 
       <div className="grid4">
         <div className="stat teal"><b>{todayTotal.toLocaleString("fr-FR")}</b><span>Encaissé aujourd'hui (FCFA)</span></div>

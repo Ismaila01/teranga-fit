@@ -19,8 +19,12 @@ export default function Dashboard() {
 
   return (
     <section>
-      <h2>Tableau de bord</h2>
-      <p className="sub">Vue d'ensemble de la salle</p>
+      <div className="hero">
+        <p className="eyebrow">Tableau de bord</p>
+        <h1>PRENDS LE CONTRÔLE<br/>DE TA SALLE</h1>
+        <div className="bar" />
+        <p>Membres, caisse et fréquentation en un coup d'œil — tout ce qu'il te faut pour piloter la salle au quotidien.</p>
+      </div>
       <div className="grid4">
         <div className="stat teal"><b>{stats.active}</b><span>Membres actifs</span></div>
         <div className="stat red"><b>{stats.expired}</b><span>Abonnements expirés</span></div>

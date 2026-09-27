@@ -43,8 +43,12 @@ export default function Access() {
 
   return (
     <section>
-      <h2>Contrôle d'accès</h2>
-      <p className="sub">Scan QR au portique</p>
+      <div className="pageHead">
+        <p className="eyebrow">Portique</p>
+        <h2>CONTRÔLE D'ACCÈS</h2>
+        <div className="bar" />
+        <p className="sub">Scan QR au portique</p>
+      </div>
 
       <div className="card row">
         <div className="field" style={{ flex: 1, minWidth: 220 }}>

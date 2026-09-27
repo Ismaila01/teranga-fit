@@ -26,8 +26,12 @@ export default function Members() {
 
   return (
     <section>
-      <h2>Membres</h2>
-      <p className="sub">Inscription, abonnement et paiement</p>
+      <div className="pageHead">
+        <p className="eyebrow">Base membres</p>
+        <h2>MEMBRES</h2>
+        <div className="bar" />
+        <p className="sub">Inscription, abonnement et paiement</p>
+      </div>
 
       <form className="card row" onSubmit={handleSubmit}>
         <div className="field">
