@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { logout, useAuth } from "../lib/auth";
+import Logo from "./Logo";
 
 const LINKS = [
   { href: "/", label: "📊 Tableau de bord" },
@@ -17,7 +18,10 @@ export default function Layout({ children }) {
   return (
     <div className="shell">
       <nav className="nav">
-        <div className="brand">Teranga<span>Fit</span></div>
+        <div className="brandRow">
+          <Logo />
+          <div className="brand">TERANGA<span>FIT</span></div>
+        </div>
         {LINKS.map((l) => (
           <Link key={l.href} href={l.href}
             className={"navbtn" + (router.pathname === l.href ? " active" : "")}>

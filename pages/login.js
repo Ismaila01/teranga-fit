@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { login } from "../lib/auth";
+import Logo from "../components/Logo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -22,7 +23,10 @@ export default function Login() {
   return (
     <div className="loginPage">
       <form className="loginCard" onSubmit={handleSubmit}>
-        <div className="brand">Teranga<span>Fit</span></div>
+        <div className="brandRow">
+          <Logo size={36} />
+          <div className="brand" style={{ fontSize: 28 }}>TERANGA<span>FIT</span></div>
+        </div>
         <p className="sub">Connexion à l'espace de gestion</p>
         <div className="field">
           <label>Email</label>
