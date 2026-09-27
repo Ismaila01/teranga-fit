@@ -13,7 +13,11 @@ const LINKS = [
 
 export default function Layout({ children }) {
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, role } = useAuth();
+
+  const links = role === "superadmin"
+    ? [...LINKS, { href: "/admin", label: "🛡️ Super Admin" }]
+    : LINKS;
 
   return (
     <div className="shell">
@@ -22,7 +26,7 @@ export default function Layout({ children }) {
           <Logo />
           <div className="brand">TERANGA<span>FIT</span></div>
         </div>
-        {LINKS.map((l) => (
+        {links.map((l) => (
           <Link key={l.href} href={l.href}
             className={"navbtn" + (router.pathname === l.href ? " active" : "")}>
             {l.label}

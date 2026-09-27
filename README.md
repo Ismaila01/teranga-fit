@@ -11,6 +11,11 @@ Stack : **Next.js + Firebase (Firestore + Auth) + déploiement Vercel**.
    - **Authentication** → activer la méthode "Email/mot de passe"
 3. Va dans **Paramètres du projet > Général > Tes applications** → crée une appli Web → copie la config.
 4. Crée manuellement un premier compte utilisateur dans **Authentication > Users > Ajouter un utilisateur** (email + mot de passe) pour te connecter à l'appli.
+5. Dans **Firestore Database > Données**, crée une collection `users`. Ajoute un document dont l'**ID est exactement l'email** de ce compte, avec les champs :
+   - `name` (string) : ton nom
+   - `role` (string) : `superadmin`
+
+   C'est ce document qui te donne accès à la page Super Admin dès ta première connexion. Une fois connecté, tu peux ajouter les autres comptes (gérants) directement depuis cette page — mais il faudra quand même créer leur compte de connexion (étape 4) à la main pour chacun, le SDK client ne permet pas de le faire depuis l'appli.
 
 ## 2. Configurer le projet en local
 
