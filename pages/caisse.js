@@ -87,7 +87,7 @@ export default function Caisse() {
             <div key={m} className={"methodCard" + (method === m ? " selected" : "")} onClick={() => setMethod(m)}>
               <div className="methodIcon">
                 {METHOD_LOGOS[m]
-                  ? <img src={METHOD_LOGOS[m]} alt={m} className="methodLogoImg" />
+                  ? <img src={METHOD_LOGOS[m]} alt={m} width="40" height="40" className="methodLogoImg" />
                   : METHOD_ICONS[m]}
               </div>
               <div>
