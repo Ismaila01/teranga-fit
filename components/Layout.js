@@ -4,11 +4,11 @@ import { logout, useAuth } from "../lib/auth";
 import Logo from "./Logo";
 
 const LINKS = [
-  { href: "/", label: "📊 Tableau de bord" },
-  { href: "/members", label: "👥 Membres" },
-  { href: "/access", label: "🚪 Accès" },
-  { href: "/caisse", label: "🎟️ Billetterie & Caisse" },
-  { href: "/reminders", label: "💬 Relances" },
+  { href: "/", label: "Tableau de bord" },
+  { href: "/caisse", label: "Caisse" },
+  { href: "/members", label: "Clients" },
+  { href: "/access", label: "Accès" },
+  { href: "/reminders", label: "Relances" },
 ];
 
 export default function Layout({ children }) {
@@ -16,27 +16,38 @@ export default function Layout({ children }) {
   const { user, role } = useAuth();
 
   const links = role === "superadmin"
-    ? [...LINKS, { href: "/admin", label: "🛡️ Super Admin" }]
+    ? [...LINKS, { href: "/admin", label: "Super Admin" }]
     : LINKS;
 
   return (
-    <div className="shell">
-      <nav className="nav">
+    <div className="appShell">
+      <header className="topbar">
         <div className="brandRow">
           <Logo />
-          <div className="brand">TERANGA<span>FIT</span></div>
+          <div>
+            <div className="brand">TERANGA<span>FIT</span></div>
+            <div className="brandSub">Gestion • Point de Vente</div>
+          </div>
         </div>
-        {links.map((l) => (
-          <Link key={l.href} href={l.href}
-            className={"navbtn" + (router.pathname === l.href ? " active" : "")}>
-            {l.label}
-          </Link>
-        ))}
-        {user && (
-          <button className="navbtn logout" onClick={logout}>🚪 Déconnexion</button>
-        )}
-      </nav>
-      <main className="main">{children}</main>
+        <nav className="pillNav">
+          {links.map((l) => (
+            <Link key={l.href} href={l.href}
+              className={"pillLink" + (router.pathname === l.href ? " active" : "")}>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="profileBox">
+          {user && (
+            <>
+              <span className="profileName">{user.email.split("@")[0]}</span>
+              <span className="dot" /> Connecté
+              <button className="navbtn logout" onClick={logout}>Déconnexion</button>
+            </>
+          )}
+        </div>
+      </header>
+      <main className="mainPage">{children}</main>
     </div>
   );
 }
