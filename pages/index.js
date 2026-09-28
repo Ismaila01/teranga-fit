@@ -26,10 +26,10 @@ export default function Dashboard() {
         <p>Membres, caisse et fréquentation en un coup d'œil — tout ce qu'il te faut pour piloter la salle au quotidien.</p>
       </div>
       <div className="grid4">
-        <div className="stat teal"><b>{stats.active}</b><span>Membres actifs</span></div>
-        <div className="stat red"><b>{stats.expired}</b><span>Abonnements expirés</span></div>
-        <div className="stat gold"><b>{stats.revenue.toLocaleString("fr-FR")}</b><span>CA du mois (FCFA)</span></div>
-        <div className="stat"><b>{stats.inside}</b><span>Présents dans la salle</span></div>
+        <div className="stat teal"><div className="icon">✅</div><b>{stats.active}</b><span>Membres actifs</span></div>
+        <div className="stat red"><div className="icon">⛔</div><b>{stats.expired}</b><span>Abonnements expirés</span></div>
+        <div className="stat gold"><div className="icon">💰</div><b>{stats.revenue.toLocaleString("fr-FR")}</b><span>CA du mois (FCFA)</span></div>
+        <div className="stat"><div className="icon">🏋️</div><b>{stats.inside}</b><span>Présents dans la salle</span></div>
       </div>
       <div className="card">
         <h3>Derniers paiements</h3>

@@ -30,8 +30,8 @@ export default function Caisse() {
       </div>
 
       <div className="grid4">
-        <div className="stat teal"><b>{todayTotal.toLocaleString("fr-FR")}</b><span>Encaissé aujourd'hui (FCFA)</span></div>
-        <div className="stat"><b>{tickets.length}</b><span>Tickets vendus aujourd'hui</span></div>
+        <div className="stat teal"><div className="icon">💵</div><b>{todayTotal.toLocaleString("fr-FR")}</b><span>Encaissé aujourd'hui (FCFA)</span></div>
+        <div className="stat"><div className="icon">🎟️</div><b>{tickets.length}</b><span>Tickets vendus aujourd'hui</span></div>
       </div>
 
       <form className="card row" onSubmit={handleSell}>
