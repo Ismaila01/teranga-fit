@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { logout, useAuth } from "../lib/auth";
 import Logo from "./Logo";
-import Athletes from "./Athletes";
 
 const LINKS = [
   { href: "/", label: "Tableau de bord" },
@@ -44,7 +43,10 @@ export default function Layout({ children }) {
             ))}
           </nav>
         </div>
-        <div className="bannerArt"><Athletes /></div>
+        <div className="bannerArt bannerPhotos">
+          <img src="/images/athlete-curl.jpg" alt="Musculation aux haltères" />
+          <img src="/images/athlete-row.jpg" alt="Coach à l'entraînement" />
+        </div>
         <div className="profileBox bannerProfile">
           {user && (
             <>
