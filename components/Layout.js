@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { logout, useAuth } from "../lib/auth";
 import Logo from "./Logo";
+import Athletes from "./Athletes";
 
 const LINKS = [
   { href: "/", label: "Tableau de bord" },
@@ -21,23 +22,30 @@ export default function Layout({ children }) {
 
   return (
     <div className="appShell">
-      <header className="topbar">
-        <div className="brandRow">
-          <Logo />
-          <div>
-            <div className="brand">TERANGA<span>FIT</span></div>
-            <div className="brandSub">Gestion • Point de Vente</div>
+      <header className="banner">
+        <div className="bannerLeft">
+          <div className="brandRow">
+            <Logo size={44} />
+            <div>
+              <div className="brand bannerBrand">TERANGA<span>FIT</span></div>
+              <div className="brandSub">Salle de sport • Gestion</div>
+            </div>
           </div>
+          <div className="bannerSlogan">
+            <p className="eyebrow">Dépasse tes limites</p>
+            <h1>FORGE TON CORPS,<br />PILOTE TA SALLE</h1>
+          </div>
+          <nav className="pillNav">
+            {links.map((l) => (
+              <Link key={l.href} href={l.href}
+                className={"pillLink" + (router.pathname === l.href ? " active" : "")}>
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-        <nav className="pillNav">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href}
-              className={"pillLink" + (router.pathname === l.href ? " active" : "")}>
-              {l.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="profileBox">
+        <div className="bannerArt"><Athletes /></div>
+        <div className="profileBox bannerProfile">
           {user && (
             <>
               <span className="profileName">{user.email.split("@")[0]}</span>

@@ -14,7 +14,7 @@ export default function Reminders() {
         <p className="eyebrow">Fidélisation</p>
         <h2>RELANCES</h2>
         <div className="bar" />
-        <p className="sub">Membres avec un abonnement mensuel dont l'échéance arrive dans 3 jours ou moins</p>
+        <p className="sub">Membres avec un abonnement mensuel dont l'échéance arrive dans 5 jours ou moins</p>
       </div>
 
       <div className="card">
