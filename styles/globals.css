@@ -200,3 +200,76 @@ option { background: #fff; color: var(--text); }
 .loginCard { background: #fff; box-shadow: var(--shadow); backdrop-filter: none; -webkit-backdrop-filter: none; }
 .scanResult.ok { color: #0B6B49; }
 .scanResult.blocked { color: #B42318; }
+
+/* ---------- Historiques & journal ---------- */
+.tag.warn { color: #B26A00; background: rgba(232,150,42,.16); }
+.tableWrap { overflow-x: auto; }
+.countNote { margin: 0 0 4px auto; color: var(--muted); font-size: 12.5px; align-self: center; }
+.whoSub { color: var(--muted); font-size: 11.5px; margin-top: 2px; }
+.detailsCell { color: #475467; font-size: 13px; min-width: 260px; }
+.sidebar { overflow-y: auto; }
+
+/* ---------- Mobile ---------- */
+.mobileLogo { display: none; }
+.titleRow { display: flex; align-items: center; gap: 12px; }
+.bottomBar, .sheet, .sheetBackdrop { display: none; }
+
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .app { padding: 10px 10px calc(92px + env(safe-area-inset-bottom, 0px)); }
+  .mobileLogo { display: flex; }
+
+  .bottomBar {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px;
+    position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 50;
+    background: rgba(255,255,255,.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--line); border-radius: 22px; padding: 6px; box-shadow: 0 10px 30px rgba(16,24,40,.18);
+  }
+  .tabItem {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    min-height: 52px; padding: 6px 2px; border-radius: 16px; border: none; background: none;
+    color: var(--muted); text-decoration: none; font-family: inherit; font-size: 10.5px; font-weight: 600; cursor: pointer;
+  }
+  .tabItem.active { color: #fff; background: linear-gradient(135deg, #FF4A3D, #D9282B); box-shadow: 0 6px 16px rgba(255,68,56,.35); }
+
+  .sheetBackdrop { display: block; position: fixed; inset: 0; background: rgba(16,24,40,.45); z-index: 60; }
+  .sheet {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: #fff;
+    border-radius: 26px 26px 0 0; padding: 10px 18px calc(20px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -10px 40px rgba(16,24,40,.25);
+  }
+  .sheetHandle { width: 40px; height: 4px; border-radius: 2px; background: rgba(20,24,40,.16); margin: 0 auto 14px; }
+  .sheetUser { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .sheetUser b { display: block; text-transform: capitalize; font-size: 14px; }
+  .sheetUser small { color: var(--muted); font-size: 12px; }
+  .sheetGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .sheetItem { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 16px; background: #F3F4F8; color: var(--text); text-decoration: none; font-size: 13.5px; font-weight: 600; }
+  .sheetItem.active { color: var(--coral); background: rgba(255,68,56,.1); }
+  .sheetLogout { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px; border-radius: 999px; border: 1.5px solid var(--line); background: none; color: var(--text); font-weight: 600; font-size: 14px; font-family: inherit; cursor: pointer; }
+}
+
+@media (max-width: 700px) {
+  .topbar2 { margin: 2px 2px 14px; }
+  .pageTitle { font-size: 20px; }
+  .pageDate { font-size: 12px; }
+  .livePill, .ctaText { display: none; }
+  .ctaLink { padding: 12px; }
+
+  .statGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat { padding: 14px; }
+  .stat b { font-size: 24px; margin-top: 8px; }
+  .statTop { font-size: 12px; }
+  .statIcon { width: 32px; height: 32px; border-radius: 10px; }
+  .stat small { font-size: 11px; }
+
+  .panel, .card, .posCol { padding: 16px; border-radius: 18px; }
+  .card, .panel { overflow-x: auto; }
+  table { min-width: 560px; }
+  .row .field { flex: 1 1 100%; }
+  .row .primary, .row .ghost { width: 100%; }
+  input, select { font-size: 16px; }
+  .pageHead h2 { font-size: 19px; }
+  .donut { width: 140px; height: 140px; }
+  .loginCard { width: min(340px, 92vw); padding: 26px; }
+  .detailsCell { min-width: 200px; }
+}
