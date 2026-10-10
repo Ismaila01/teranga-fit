@@ -29,7 +29,7 @@ export default function Caisse() {
   const { role } = useAuth();
   const isSuperAdmin = role === "superadmin";
   const [todayList, setTodayList] = useState([]);
-  const [ticketType, setTicketType] = useState("seance");
+  const [ticketType, setTicketType] = useState("seance_sans");
   const [buyer, setBuyer] = useState("");
   const [method, setMethod] = useState("Wave");
   const [lastSale, setLastSale] = useState(null);

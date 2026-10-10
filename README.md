@@ -73,3 +73,17 @@ Le design utilise `framer-motion` (animations) et `lucide-react` (icônes). Apr�
 npm install
 npm run dev
 ```
+
+## Utilisation sur téléphone
+
+L'application s'adapte aux petits écrans (barre de navigation en bas, tableaux défilables).
+Elle peut aussi s'installer comme une appli : ouvre le site sur le téléphone, puis
+« Ajouter à l'écran d'accueil » (Chrome Android : menu ⋮ ; iPhone : bouton Partager dans Safari).
+L'installation fonctionne sur le site en ligne (HTTPS), pas sur `localhost`.
+
+## Ticket QR et WhatsApp
+
+À l'inscription d'un membre, un ticket avec QR code est créé et un bouton « Envoyer le ticket par WhatsApp »
+ouvre WhatsApp avec le message et le lien du ticket déjà prêts. À l'accueil, la page **Accès** scanne
+ce QR code avec la caméra (le site doit être en HTTPS, ce qui est le cas sur Vercel).
+Après avoir copié les fichiers : `npm install`, puis republier `firestore.rules`.

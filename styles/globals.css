@@ -273,3 +273,26 @@ option { background: #fff; color: var(--text); }
   .loginCard { width: min(340px, 92vw); padding: 26px; }
   .detailsCell { min-width: 200px; }
 }
+
+/* ---------- Ticket QR, scanner ---------- */
+a.ghost { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: var(--text); }
+.cellActions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.iconText { display: inline-flex; align-items: center; gap: 5px; padding: 7px 12px; }
+.successCard { border: 1px solid rgba(18,160,110,.35); background: rgba(18,160,110,.06); }
+
+.scanner { position: relative; border-radius: 18px; overflow: hidden; background: #000; max-width: 420px; margin: 4px auto 0; }
+.scanner video { width: 100%; display: block; }
+.scanFrame { position: absolute; inset: 18%; border: 3px solid rgba(255,255,255,.92); border-radius: 18px; box-shadow: 0 0 0 999px rgba(0,0,0,.3); pointer-events: none; }
+.hiddenCanvas { display: none; }
+
+.qrImg { display: block; margin: 14px auto; border-radius: 12px; }
+.ticketPage { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; position: relative; z-index: 1; }
+.passCard { width: min(380px, 100%); background: #fff; border-radius: 26px; padding: 28px 24px; text-align: center; box-shadow: var(--shadow); }
+.passCard .brandRow { justify-content: center; }
+.passLabel { margin: 22px 0 6px; font-size: 11px; letter-spacing: .16em; color: var(--coral); font-weight: 700; }
+.passName { font-size: 24px; font-weight: 800; margin: 0; }
+.passPlan { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+.passDates { display: flex; justify-content: space-between; gap: 12px; margin: 18px 0 6px; text-align: left; }
+.passDates small { display: block; color: var(--muted); font-size: 11px; }
+.passDates b { font-size: 13.5px; }
+.passHint { color: var(--muted); font-size: 12.5px; margin: 14px 0 0; }
