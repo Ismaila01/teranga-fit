@@ -57,19 +57,19 @@ function LineChart({ data }) {
       </defs>
       {[0, 1, 2, 3].map((i) => (
         <line key={i} x1={P} x2={W - P} y1={P + (i * (H - 2 * P)) / 3} y2={P + (i * (H - 2 * P)) / 3}
-          stroke="rgba(255,255,255,0.07)" strokeDasharray="4 6" />
+          stroke="rgba(20,24,40,0.09)" strokeDasharray="4 6" />
       ))}
       <motion.path d={area} fill="url(#areaGrad)" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} />
       <motion.path d={line} fill="none" stroke="#FF4438" strokeWidth="3" strokeLinecap="round"
         initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.3, ease: "easeInOut" }} />
       {pts.map((p, i) => (
-        <motion.circle key={i} cx={p.x} cy={p.y} r="4" fill="#0B0C0E" stroke="#FF4438" strokeWidth="2"
+        <motion.circle key={i} cx={p.x} cy={p.y} r="4" fill="#FFFFFF" stroke="#FF4438" strokeWidth="2"
           initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.6 + i * 0.04 }} />
       ))}
       {data.map((d, i) => (i % step === 0) && (
-        <text key={i} x={pts[i].x} y={H - 6} textAnchor="middle" fontSize="10" fill="#9A9DA6">{d.label}</text>
+        <text key={i} x={pts[i].x} y={H - 6} textAnchor="middle" fontSize="10" fill="#667085">{d.label}</text>
       ))}
-      <text x={P} y={14} fontSize="10" fill="#9A9DA6">max {max.toLocaleString("fr-FR")} F</text>
+      <text x={P} y={14} fontSize="10" fill="#667085">max {max.toLocaleString("fr-FR")} F</text>
     </svg>
   );
 }
@@ -82,7 +82,7 @@ function Donut({ items }) {
   return (
     <div className="donutWrap">
       <svg viewBox="0 0 140 140" className="donut">
-        <circle cx="70" cy="70" r={R} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="14" />
+        <circle cx="70" cy="70" r={R} fill="none" stroke="rgba(20,24,40,0.09)" strokeWidth="14" />
         {total > 0 && items.map((it, i) => {
           const len = (it.value / total) * C;
           const el = (
@@ -94,10 +94,10 @@ function Donut({ items }) {
           offset += len;
           return el;
         })}
-        <text x="70" y="68" textAnchor="middle" fontSize="22" fontWeight="800" fill="#F4F4F6">
+        <text x="70" y="68" textAnchor="middle" fontSize="22" fontWeight="800" fill="#14161B">
           {total > 0 ? Math.round((top.value / total) * 100) + "%" : "—"}
         </text>
-        <text x="70" y="84" textAnchor="middle" fontSize="9" fill="#9A9DA6">{total > 0 ? top.label : "Aucune vente"}</text>
+        <text x="70" y="84" textAnchor="middle" fontSize="9" fill="#667085">{total > 0 ? top.label : "Aucune vente"}</text>
       </svg>
       <ul className="legend">
         {items.map((it, i) => (
