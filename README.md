@@ -64,3 +64,12 @@ firestore.rules      → règles de sécurité (accès réservé aux comptes con
 - Brancher les vraies API Wave / Orange Money pour capturer les paiements automatiquement
 - Brancher l'API WhatsApp Business pour l'envoi réel des relances (actuellement affichées, pas envoyées)
 - Ajouter Firebase Storage pour les photos des membres
+
+## Nouveau design (tableau de bord animé)
+
+Le design utilise `framer-motion` (animations) et `lucide-react` (icônes). Après avoir copié les fichiers :
+
+```bash
+npm install
+npm run dev
+```
