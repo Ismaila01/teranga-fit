@@ -15,11 +15,18 @@ export default function PublicTicket() {
   const [pass, setPass] = useState(undefined); // undefined = chargement, null = introuvable
 
   useEffect(() => {
-    if (!id) return;
-    getDoc(doc(db, "passes", id))
-      .then((s) => setPass(s.exists() ? s.data() : null))
-      .catch(() => setPass(null));
-  }, [id]);
+  if (!id) return;
+  const projet = db.app.options.projectId;
+  getDoc(doc(db, "passes", id))
+    .then((s) => {
+      if (!s.exists()) setErr("Aucun document passes/" + id + " (projet : " + projet + ")");
+      setPass(s.exists() ? s.data() : null);
+    })
+    .catch((e) => {
+      setErr((e.code || "") + " | " + e.message + " (projet : " + projet + ")");
+      setPass(null);
+    });
+}, [id]);
 
   const valid = pass && pass.endAt.toMillis() >= Date.now();
 
